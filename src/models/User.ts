@@ -18,7 +18,7 @@ class User {
   admin: boolean;
 
   @Column()
-  waiter: boolean;
+  waiter?: boolean;
 
   @Column()
   code: number;
