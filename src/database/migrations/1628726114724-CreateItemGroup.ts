@@ -1,12 +1,12 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateBarTables1628640398611
+export default class CreateItemGroup1628726114724
   implements MigrationInterface
 {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'bar_tables',
+        name: 'item_group',
         columns: [
           {
             name: 'id',
@@ -16,15 +16,8 @@ export default class CreateBarTables1628640398611
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'number',
-            type: 'int',
-            isGenerated: true,
-            isUnique: true,
-          },
-          {
-            name: 'status',
-            type: 'boolean',
-            isNullable: true,
+            name: 'name',
+            type: 'varchar',
           },
           {
             name: 'created_at',
@@ -42,6 +35,6 @@ export default class CreateBarTables1628640398611
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('bar_tables');
+    queryRunner.dropTable('item_group');
   }
 }

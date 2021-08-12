@@ -3,8 +3,8 @@ import BarTable from '../models/BarTable';
 import BarTablesRepository from '../repositories/BarTablesRepository';
 
 interface Request {
-  tableNumber: number
-  status?: boolean
+  tableNumber: number;
+  status?: boolean;
 }
 
 class CreateBarTableService {

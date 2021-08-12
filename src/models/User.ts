@@ -1,21 +1,33 @@
 import {
   Column,
-  CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('bar_tables')
-class BarTable {
+@Entity('users')
+class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  tableNumber: number;
+  name: string;
 
   @Column()
-  status?: boolean;
+  admin: boolean;
+
+  @Column()
+  waiter: boolean;
+
+  @Column()
+  code: number;
+
+  @Column()
+  email: string;
+
+  @Column()
+  password: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -24,4 +36,4 @@ class BarTable {
   updated_at: Date;
 }
 
-export default BarTable;
+export default User;
