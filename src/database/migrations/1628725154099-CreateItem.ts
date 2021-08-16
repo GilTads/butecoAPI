@@ -8,7 +8,7 @@ export default class CreateItem1628725154099 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
@@ -18,7 +18,7 @@ export default class CreateItem1628725154099 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'preco',
+            name: 'price',
             type: 'decimal',
           },
           {
