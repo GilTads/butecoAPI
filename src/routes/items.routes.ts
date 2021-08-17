@@ -17,7 +17,7 @@ itemsRouter.post('/', async (request, response) => {
       item_group_id,
     });
 
-    return response.send(item);
+    return response.json(item);
   } catch (error) {
     return response.status(400).json({ error: error.message });
   }
