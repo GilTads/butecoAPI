@@ -10,7 +10,7 @@ import {
 import ItemGroup from './ItemGroup';
 
 @Entity('items')
-class Items {
+class Item {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -22,9 +22,6 @@ class Items {
 
   @Column()
   detail: string;
-
-  @Column()
-  status: boolean;
 
   @Column()
   item_group_id: string;
@@ -40,4 +37,4 @@ class Items {
   updated_at: Date;
 }
 
-export default Items;
+export default Item;
