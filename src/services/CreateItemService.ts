@@ -6,6 +6,7 @@ interface Request {
   price: number;
   detail: string;
   item_group_id: string;
+  user_id: string;
 }
 
 class CreateItemService {
@@ -14,6 +15,7 @@ class CreateItemService {
     price,
     detail,
     item_group_id,
+    user_id,
   }: Request): Promise<Item> {
     const itemsRepository = getRepository(Item);
 
@@ -32,6 +34,7 @@ class CreateItemService {
       price,
       detail,
       item_group_id,
+      user_id,
     });
 
     await itemsRepository.save(item);

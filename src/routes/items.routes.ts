@@ -6,7 +6,7 @@ const itemsRouter = Router();
 
 itemsRouter.post('/', async (request, response) => {
   try {
-    const { name, price, detail, item_group_id } = request.body;
+    const { name, price, detail, item_group_id, user_id } = request.body;
 
     const createItem = new CreateItemService();
 
@@ -15,6 +15,7 @@ itemsRouter.post('/', async (request, response) => {
       price,
       detail,
       item_group_id,
+      user_id,
     });
 
     return response.json(item);
