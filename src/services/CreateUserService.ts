@@ -26,6 +26,8 @@ export default class CreateUserService {
       where: { email },
     });
 
+    console.log(checkUserExists);
+
     if (checkUserExists) {
       throw new Error('Email já cadastrado');
     }

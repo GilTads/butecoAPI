@@ -17,8 +17,18 @@ class CreateItemService {
   }: Request): Promise<Item> {
     const itemsRepository = getRepository(Item);
 
+    const upperCaseName = name.toUpperCase();
+
+    const checkItemExists = await itemsRepository.findOne({
+      where: { name: upperCaseName },
+    });
+
+    if (checkItemExists) {
+      throw new Error('Item já cadastrado');
+    }
+
     const item = itemsRepository.create({
-      name,
+      name: upperCaseName,
       price,
       detail,
       item_group_id,
